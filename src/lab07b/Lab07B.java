@@ -96,7 +96,9 @@ public class Lab07B extends Application {
         });
         
         trans.setOnFinished(e -> {
-            System.out.println(images[idx].getUrl());
+            if (idx + 1 == 21) {
+                idx = 0;
+            }
             imageView.setImage(images[idx++]);
             
             trans.setNode(imageView);
