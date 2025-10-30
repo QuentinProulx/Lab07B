@@ -20,7 +20,7 @@ import javafx.util.Duration;
  * @author 6324569
  */
 public class Lab07B extends Application {
-    Image[] images = new Image[20];
+    Image[] images = new Image[21];
     ImageView imageView = null;
     int idx = 0;
     boolean paused = false;
@@ -36,7 +36,7 @@ public class Lab07B extends Application {
 
     @Override
     public void start(Stage stage) {
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 21; i++) {
             images[i] = new Image("file:images/" + (101 + i) + ".jpg");
         }
         
@@ -88,11 +88,13 @@ public class Lab07B extends Application {
         speed1.setOnMouseClicked(e -> {
             speed /= 1.5;
             trans.setDuration(Duration.millis(speed));
+            trans2.setDuration(Duration.millis(speed));
         });
         
         speed2.setOnMouseClicked(e -> {
             speed += 250;
             trans.setDuration(Duration.millis(speed));
+            trans2.setDuration(Duration.millis(speed));
         });
         
         trans.setOnFinished(e -> {
